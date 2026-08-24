@@ -1,0 +1,20 @@
+def calculator():
+    print("Python Calculator")
+    print("Enter 'q' to quit.")
+
+    while True:
+        expression = input("\nEnter calculation: ")
+
+        if expression.lower() == "q":
+            print("Goodbye!")
+            break
+
+        try:
+            result = eval(expression, {"__builtins__": {}}, {})
+            print("Result:", result)
+        except Exception:
+            print("Invalid calculation.")
+
+
+if __name__ == "__main__":
+    calculator()
